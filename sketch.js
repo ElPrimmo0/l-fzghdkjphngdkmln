@@ -112,6 +112,8 @@ function iniciarNivel(nivel){
   Alerrandro = new  Jadoar(100,  height-120, 75,50);
   privada = new  Privada(200, height-2050, 200,100 );
   coco.push(new Coco (400 , height-280, 50,50,2))
+  coco.push(new Coco (200 , height-6300, 50,50,2))
+  coco.push(new Coco (400 , height-1405, 50,50,2))
   } 
 
   function nivel2(){
@@ -135,6 +137,8 @@ function iniciarNivel(nivel){
   Alerrandro = new  Jadoar(100,  height-120, 75,50);
   privada = new  Privada(1250, height-2050, 200,100 );
   coco.push(new Coco (650 , height-280, 50,50,2))
+  coco.push(new Coco (1000 , height-880, 50,50,2))
+  coco.push(new Coco (1200 , height-1655, 50,50,2))
   }
 
   function nivel3(){
@@ -151,7 +155,11 @@ function iniciarNivel(nivel){
   plataforma.push(new Plataformas(1150, height-1365, 200,20 ));
   plataforma.push(new Plataformas(1250, height-1495, 200,20 ));
   Alerrandro = new  Jadoar(400,  height-330, 75,50);
-  privada = new  Privada(1250, height-2050, 200,100 );
+  privada = new  Privada(1250, height-2050, 200,100 ); 
+  coco.push(new Coco (400 , height-330, 50,50,2))
+  coco.push(new Coco (800 , height-790, 50,50,2))
+  coco.push(new Coco (1050 , height-1265, 50,50,2))
+
   }
 
   function removerTudo(){
@@ -161,13 +169,18 @@ function iniciarNivel(nivel){
         
    }
  }
-    plataforma = []
-
-      if (privada && privada.corpo){
+ coco = []
+ 
+   for (let c of coco)
+      if (c&&c.corpo){
+        Mundo.remove(mundo, c.corpo);
+        
+    }
+    if (privada && privada.corpo){
         Mundo.remove(mundo, privada.corpo);
         privada=null
     }
- }
+  }
 
 function keyPressed(){
   if(keyCode === RIGHT_ARROW){
